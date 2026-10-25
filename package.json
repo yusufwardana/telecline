@@ -1,0 +1,20 @@
+{
+  "name": "telecline-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @telecline/shared && npm run build --workspace @telecline/security && npm run build --workspace @telecline/cline-adapter && npm run build --workspace @telecline/mcp-server && npm run build --workspace @telecline/telegram-gateway && npm run build --workspace telecline",
+    "test": "vitest run",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@vscode/vsce": "^3.6.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "telecline",
+  "displayName": "TeleCline",
+  "version": "0.1.0",
+  "publisher": "telecline",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:telecline.setupTelegramBot",
+    "onCommand:telecline.connect",
+    "onCommand:telecline.disconnect",
+    "onCommand:telecline.sendTestMessage",
+    "onCommand:telecline.selectWorkspace",
+    "onCommand:telecline.showStatus",
+    "onCommand:telecline.openLogs"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "telecline.setupTelegramBot", "title": "TeleCline: Setup Telegram Bot" },
+      { "command": "telecline.connect", "title": "TeleCline: Connect" },
+      { "command": "telecline.disconnect", "title": "TeleCline: Disconnect" },
+      { "command": "telecline.sendTestMessage", "title": "TeleCline: Send Test Message" },
+      { "command": "telecline.selectWorkspace", "title": "TeleCline: Select Workspace" },
+      { "command": "telecline.showStatus", "title": "TeleCline: Show Status" },
+      { "command": "telecline.openLogs", "title": "TeleCline: Open Logs" }
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "package": "npx @vscode/vsce package --allow-star-activation --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0"
+  }
+}
